@@ -1,0 +1,28 @@
+---
+title: "Security overview"
+description: "How PayGlue stores and protects your credentials."
+---
+
+## Credential storage
+
+All credentials you enter in PayGlue (Ghost Admin API keys, payment provider tokens) are encrypted at rest using AES-256. They are never stored in plain text.
+
+## Zero-knowledge design
+
+PayGlue staff cannot read your API keys or provider secrets. Credentials are decrypted only at runtime when a webhook event needs to be processed.
+
+## Infrastructure
+
+PayGlue runs on EU-based infrastructure. No credential data leaves the EU.
+
+## Data PayGlue stores
+
+| Data | Purpose |
+| --- | --- |
+| Ghost Admin URL and API key | Creating and updating Ghost members |
+| Payment provider API tokens | Verifying webhook signatures and fetching order details |
+| Webhook event log | Audit trail for debugging |
+
+## Reporting a security issue
+
+Contact [team@payglue.io](mailto:team@payglue.io) to report a security vulnerability.

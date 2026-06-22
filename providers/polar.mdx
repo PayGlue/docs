@@ -1,0 +1,32 @@
+---
+title: "Polar"
+description: "Connect Polar as a payment provider in PayGlue."
+---
+
+Polar is the first fully supported payment provider in PayGlue.
+
+## Prerequisites
+
+- A Polar account at [polar.sh](https://polar.sh)
+- At least one product created in Polar
+
+## Steps
+
+<Steps>
+  <Step title="Create an API token">
+    In Polar, go to **Settings \> Preferences \> Developers** and create a new API token. Set expiration to **Never** and enable the required scopes.
+  </Step>
+  <Step title="Add to PayGlue">
+    In your PayGlue dashboard, go to **Providers** and click **Connect Polar**. Paste your API token.
+  </Step>
+  <Step title="Create a mapping">
+    Go to **Mappings**, create a new mapping, and select your Polar product.
+  </Step>
+  <Step title="Add the webhook URL">
+    Copy the webhook URL from your mapping and add it in **Polar \> Settings \> Webhooks**.
+  </Step>
+</Steps>
+
+<Note>
+  PayGlue uses Polar's `order.paid` event to trigger Ghost membership creation.
+</Note>

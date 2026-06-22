@@ -1,0 +1,18 @@
+---
+title: "Ghost shows a Stripe cancellation notice"
+description: "Why Ghost shows a Stripe cancellation notice for PayGlue members and how to handle it."
+---
+
+## Why this happens
+
+Ghost tracks member subscriptions through Stripe. When PayGlue creates a member with `comped: true` (a complimentary membership), Ghost does not see an active Stripe subscription behind it. In some Ghost versions, this causes the member's account page to show a Stripe-related cancellation or billing notice.
+
+This is a Ghost UI issue, not a PayGlue error. The member's access is fully active.
+
+## What to tell your members
+
+If a member contacts you about this notice, reassure them that their access is active and the notice can be ignored. Their membership was granted through your payment provider, not directly through Stripe.
+
+## Long-term fix
+
+We are working on documentation and a dashboard hint to make this easier to communicate. See also: [Why Ghost requires Stripe](/ghost/stripe-requirement).

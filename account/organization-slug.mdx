@@ -1,0 +1,26 @@
+---
+title: "Organization slug"
+description: "What the organization slug is and what changes when you rename it."
+---
+
+## What is the organization slug?
+
+The slug is the unique identifier for your PayGlue organization. It appears in your webhook URLs and your dashboard URL.
+
+```text
+https://api.payglue.io/webhooks/{provider}?tenant=your-slug
+```
+
+## Renaming your slug
+
+You can rename your slug in **Settings \> Organization**. Before saving, PayGlue will ask you to confirm that you understand the webhook URLs will change.
+
+<Warning>
+  After renaming, you must update the webhook URL in every connected payment provider's dashboard. Webhooks sent to the old URL will fail until you update them.
+</Warning>
+
+## Where to update after a rename
+
+- Polar: Settings \> Webhooks
+- Lemon Squeezy: Settings \> Webhooks
+- Stripe: Developers \> Webhooks

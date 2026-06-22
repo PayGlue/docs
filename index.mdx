@@ -1,20 +1,37 @@
 ---
-title: "Introduction"
-description: "Welcome to your project"
+title: "Get started"
+description: "Connect Ghost memberships to any payment provider in minutes."
 ---
 
-<Tip>
-  Ready to make this your own? Start by editing this page. Update your `docs.json` file to customize your site. Then fill out the [Quickstart](/quickstart) page.
-</Tip>
+Welcome to PayGlue. This guide walks you through connecting your Ghost publication to a payment provider so members receive access automatically after a purchase.
 
-<Card title="Quickstart" icon="rocket" href="/quickstart">
-  This card links to the quickstart page in your project.
-</Card>
+## What you need
 
-<Card title="Components" icon="puzzle-piece" href="https://mintlify.com/docs/components">
-  Add cards, callouts, steps, tabs, and more to design and structure your pages.
-</Card>
+- A Ghost publication (self-hosted or Ghost Pro)
+- A PayGlue account
+- An account with a supported payment provider (Polar, Lemon Squeezy, or Stripe)
 
-<Card title="Settings" icon="gear" href="https://mintlify.com/docs/organize/settings">
-  Set your site name, branding, and navigation in the `docs.json` file.
-</Card>
+## Steps
+
+<Steps>
+  <Step title="Connect Ghost">
+    Add your Ghost Admin API key so PayGlue can create and manage members.
+
+    [Connect Ghost](/ghost/connect)
+  </Step>
+  <Step title="Connect a payment provider">
+    Add your provider credentials and configure the webhook URL.
+
+    [View providers](/providers/polar)
+  </Step>
+  <Step title="Create a mapping">
+    Define which product triggers which Ghost membership tier.
+
+    [Create a mapping](/mappings/create)
+  </Step>
+</Steps>
+
+## Need help?
+
+- [Troubleshooting](/troubleshooting/common-errors)
+- [FAQ](/faq)

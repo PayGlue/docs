@@ -1,0 +1,28 @@
+---
+title: "Member did not receive access"
+description: "Steps to diagnose why a member did not get Ghost access after a purchase."
+---
+
+<Warning>
+  This page is coming soon.
+</Warning>
+
+## Check the event log first
+
+Go to **Webhooks \> Event log** in your PayGlue dashboard. Find the event for the purchase and check the status.
+
+## Common causes
+
+| Status | Cause | Fix |
+| --- | --- | --- |
+| Failed | Ghost Admin API error | Check your Ghost credentials |
+| Skipped | Event type not mapped | Create a mapping for this product |
+| No event | Webhook not received | Check the webhook URL in your provider |
+
+## Ghost credentials expired
+
+If your Ghost Admin API key was regenerated or revoked, PayGlue cannot create members. Update your credentials in **Settings \> Ghost credentials**.
+
+## Webhook URL mismatch
+
+If you renamed your organization slug, your webhook URLs changed. Update the URL in your provider's webhook settings.

@@ -34,7 +34,74 @@
           "icon": "analytics"
         }
       ]
-    }
+    },
+    "groups": [
+      {
+        "group": "Get started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Ghost",
+        "pages": [
+          "ghost/connect",
+          "ghost/stripe-requirement",
+          "ghost/welcome-emails"
+        ]
+      },
+      {
+        "group": "Mappings",
+        "pages": [
+          "mappings/create",
+          "mappings/email-types",
+          "mappings/webhook-urls"
+        ]
+      },
+      {
+        "group": "Providers",
+        "pages": [
+          "providers/polar",
+          "providers/lemon-squeezy",
+          "providers/stripe"
+        ]
+      },
+      {
+        "group": "Pricing table",
+        "pages": [
+          "pricing-table/overview"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "troubleshooting/ghost-stripe-notice",
+          "troubleshooting/member-no-access",
+          "troubleshooting/common-errors"
+        ]
+      },
+      {
+        "group": "Account",
+        "pages": [
+          "account/billing",
+          "account/organization-slug",
+          "account/team-members"
+        ]
+      },
+      {
+        "group": "Security",
+        "pages": [
+          "security/overview"
+        ]
+      },
+      {
+        "group": "Webhooks",
+        "pages": [
+          "webhooks/event-log"
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/images/payglue-logo-dark.svg",
