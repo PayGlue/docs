@@ -1,0 +1,28 @@
+---
+title: "Event log"
+description: "View and debug incoming webhook events in PayGlue."
+---
+
+## What the event log shows
+
+Every webhook event PayGlue receives is recorded in the event log. You can find it under **Webhooks** in your dashboard.
+
+## Event statuses
+
+| Status | Meaning |
+| --- | --- |
+| Processed | Ghost member was created or updated successfully |
+| Failed | An error occurred. See the error details for the cause. |
+| Skipped | Event type is not mapped. No action was taken. |
+
+## Filtering events
+
+Use the status filter to show only Processed, Failed, or Skipped events.
+
+## Debugging a failed event
+
+1. Click the event to see the full error message
+2. Check your Ghost credentials are still valid
+3. Check the webhook URL in your provider matches your current organization slug
+
+See also: [Member did not receive access](/troubleshooting/member-no-access)
