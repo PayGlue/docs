@@ -24,21 +24,22 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Dashboard",
-          "href": "https://app.payglue.io",
-          "icon": "book-open-cover"
+          "anchor": "Payglue.io",
+          "icon": "home",
+          "href": "https://payglue.io"
         },
         {
-          "anchor": "Blog",
-          "href": "https://payglue.io/blog",
-          "icon": "newspaper"
+          "anchor": "Dashboard",
+          "href": "https://app.payglue.io/",
+          "icon": "analytics"
         }
       ]
     }
   },
   "logo": {
-    "light": "/images/payglue-icon.svg",
-    "dark": "/images/payglue-icon.svg"
+    "light": "/images/payglue-logo-light.svg",
+    "dark": "/images/payglue-logo-dark.svg",
+    "href": "https://payglue.io"
   },
   "navbar": {
     "links": [
