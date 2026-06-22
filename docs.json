@@ -37,8 +37,8 @@
     }
   },
   "logo": {
-    "light": "/images/payglue-logo-light.svg",
-    "dark": "/images/payglue-logo-dark.svg",
+    "light": "/images/payglue-logo-dark.svg",
+    "dark": "/images/payglue-logo-light.svg",
     "href": "https://payglue.io"
   },
   "navbar": {
