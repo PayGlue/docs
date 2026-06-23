@@ -1,0 +1,43 @@
+---
+title: "How it works"
+description: "Gate Ghost content without Stripe using PayGlue's JavaScript paywall."
+---
+
+The JS Paywall lets you restrict content on your Ghost site for paying members — without needing Stripe connected to Ghost. PayGlue acts as the source of truth for who has paid.
+
+## How it works
+
+1. A visitor opens a Ghost article that contains a paywall snippet.
+2. The PayGlue script (loaded in your Ghost site header) checks whether the currently logged-in Ghost member has an active entitlement via PayGlue's API.
+3. If the member has paid (via Polar or another connected provider), the article content is shown normally.
+4. If not, an overlay appears with a headline, body text, and a buy button linking to your payment provider checkout.
+
+## Setup
+
+Go to **Dashboard → JS Paywall** to create and manage your paywall configurations.
+
+Each configuration has:
+
+- A **name** (internal label)
+- **Headline** and **body text** shown in the overlay
+- A **button** with custom text, color, and URL (or pick a Polar product directly)
+- A **live preview** of the overlay
+
+After saving, you get two snippets:
+
+| Snippet | Where it goes | Frequency |
+| --- | --- | --- |
+| **Step 1** — script tag | Ghost Admin → Settings → Code Injection → Site Header | Once per site |
+| **Step 2** — HTML card | Ghost article, inside an HTML card block | Once per article |
+
+## Security limitation
+
+<Warning>
+  The JS Paywall is **client-side only**. The gated content is loaded into the page and the overlay is rendered on top of it in the browser. A technically capable visitor can use browser DevTools to read the content without paying.
+
+  This is suitable for most use cases such as blog posts, newsletters, and community content — where the goal is to convert willing members rather than guard sensitive data.
+
+  **Do not use the JS Paywall for:** passwords, private credentials, medical records, or any content where unauthorized access would cause real harm.
+</Warning>
+
+Server-side content protection (where content is never sent to the browser unless the member is authorized) is on the roadmap as a future feature.
