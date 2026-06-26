@@ -1,28 +1,27 @@
 ---
-title: "overview.mdx"
-description: "Gate Ghost content without Stripe using PayGlue's JavaScript paywall."
-hidden: true
+title: "Paywall"
+description: "Hide Ghost content behind a payment wall without Stripe using PayGlue."
 ---
 
-The JS Paywall hides content on any Ghost post or page so that only members who have purchased access can read it. It works without Stripe in Ghost — your payment provider handles the purchase, and PayGlue grants Ghost membership automatically after the transaction.
+The PayGlue Paywall hides content on any Ghost post or page so that only members who have purchased access can read it. It works without Stripe — your payment provider handles the purchase, and PayGlue grants Ghost membership automatically after the transaction.
 
 ## How it works
 
-A small script in your Ghost site header checks whether the logged-in member has active access. If not, a paywall overlay appears over the locked content. The overlay disappears as soon as the member logs in with an account that PayGlue has already granted access to after a purchase.
+A small script in your Ghost site header checks whether the logged-in member has active access. If not, a paywall overlay appears over the locked content below the embed point. The overlay disappears automatically as soon as the member logs in with an account that PayGlue has already granted access to after a completed purchase.
 
 ## What you need
 
-Before embedding the Paywall, make sure the following are in place:
+Before using the Paywall, the following must be in place:
 
 - Ghost is connected in PayGlue (Admin API key added)
 - A payment provider is connected
-- At least one product and mapping are set up in PayGlue
-- The PayGlue header script is installed in Ghost (Step 1 below)
+- At least one product and one mapping are configured in PayGlue
+- The PayGlue header script is installed in your Ghost site header
 
-The overlay will display as soon as the header script and embed are in place. Members can only unlock the content once the full payment flow is working — provider connected, product mapped, webhook active.
+The overlay appears as soon as the header script and embed are in place. Members can only unlock content once the full payment flow is working: provider connected, product mapped, webhook active.
 
 <Warning>
-  The JS Paywall is client-side only. A technically capable visitor can use browser DevTools to read the hidden content without paying. It is suitable for blog posts, newsletters, and community content — not for sensitive data like credentials or medical records.
+  The Paywall is client-side only. A technically capable visitor can use browser DevTools to view the hidden content without paying. It is well suited for blog posts, newsletter archives, and community content — not for sensitive data such as API keys, credentials, or medical records.
 </Warning>
 
 ## Setup
@@ -31,38 +30,46 @@ The overlay will display as soon as the header script and embed are in place. Me
   <Step title="Install the header script in Ghost">
     In your PayGlue dashboard, go to **Installation** and copy the header script.
 
-    PLACEHOLDER IMAGE - PayGlue Installation page showing the header script code block (`<script src="https://api.payglue.io/paywall.js" data-org="...">`) with the Copy button highlighted
+    PLACEHOLDER IMAGE — PayGlue Installation page showing the header script code block with the Copy button highlighted
 
     Open Ghost Admin and go to **Settings → Code Injection → Site Header**. Paste the script and click **Save**.
 
-    PLACEHOLDER IMAGE - Ghost Admin Settings → Code Injection screen. The Site Header text field contains the PayGlue script tag. The Save button is visible in the top right.
+    PLACEHOLDER IMAGE — Ghost Admin Code Injection screen with the PayGlue script tag pasted in the Site Header field
 
     The script only needs to be installed once. It runs on every page of your Ghost site automatically.
   </Step>
   <Step title="Create a Paywall config">
-    In your PayGlue dashboard, go to **JS Paywall** and click **New paywall**.
+    In your PayGlue dashboard, go to **Paywall** and click **New paywall**.
 
-    Set the headline, body text, button label, and button URL. The button URL should point to your checkout page so visitors can purchase access directly from the overlay.
+    Fill in the fields:
 
-    PLACEHOLDER IMAGE - JS Paywall config form in the PayGlue dashboard. Fields visible: Name, Headline, body text, button label, button color picker, and button URL. A live preview of the overlay is shown on the right side.
+    | Field | What it does |
+    | --- | --- |
+    | Name | Internal label — not shown to visitors |
+    | Headline | Title shown on the overlay |
+    | Body text | Short message below the headline |
+    | Button label | Text on the call-to-action button |
+    | Button URL | Where the button sends visitors — use your payment provider checkout link |
+
+    PLACEHOLDER IMAGE — Paywall config form in the PayGlue dashboard with the fields Name, Headline, Body text, Button label, Button color picker, and Button URL visible
 
     Click **Save**. The embed snippet appears below the form.
 
-    PLACEHOLDER IMAGE - Saved Paywall config in edit mode showing the embed snippet (`<div data-payglue-gated ...>`) below the form with a copy button
+    PLACEHOLDER IMAGE — Saved Paywall config showing the embed snippet below the form with a Copy button
   </Step>
   <Step title="Embed in your Ghost post">
     Open the Ghost post or page where you want to protect content.
 
-    Add an **HTML card** at the point where you want the paywall to begin. Paste the embed snippet from Step 2 into the card.
+    Add an **HTML card** at the exact point where the paywall should begin. Paste the embed snippet from Step 2 into the card.
 
-    PLACEHOLDER IMAGE - Ghost post editor. An HTML card is inserted mid-article. The PayGlue Paywall embed snippet is pasted inside the card. Content below the card is visually cut off to indicate it will be hidden.
+    PLACEHOLDER IMAGE — Ghost post editor with an HTML card inserted mid-article containing the PayGlue Paywall embed snippet
 
-    Everything above the HTML card is visible to all visitors. Everything below the card is hidden behind the paywall overlay.
+    Everything above the HTML card is visible to all visitors. Everything below is hidden behind the paywall overlay.
   </Step>
   <Step title="Test the paywall">
     Open the post in a private or incognito window. The paywall overlay should appear over the content below the embed.
 
-    PLACEHOLDER IMAGE - Live Ghost blog post viewed in an incognito browser. The first paragraphs are visible, then a PayGlue overlay covers the rest with the configured headline, body text, and a buy button.
+    PLACEHOLDER IMAGE — Live Ghost blog post in an incognito browser. The first paragraphs are visible, then a PayGlue overlay covers the rest with the configured headline, body text, and buy button.
 
     Log in with a Ghost member account that has active PayGlue access. The overlay should disappear and the full content should be visible.
   </Step>
@@ -70,12 +77,16 @@ The overlay will display as soon as the header script and embed are in place. Me
 
 ## Customizing the overlay
 
-You can change the headline, body text, and button style in the Paywall config at any time. Changes apply immediately to every post that uses that config — no need to update the embed in Ghost.
+You can update the headline, body text, and button style in the Paywall config at any time. Changes apply immediately to every post using that config — no need to update the embed in Ghost.
 
 ## Using multiple Paywall configs
 
-You can create multiple configs — for example, one per product or content category. Each config has its own embed snippet, so different posts can show different overlay text or link to different checkout pages.
+You can create multiple configs — for example, one per product or content category. Each config has its own embed snippet. Different posts can show different overlay text and link to different checkout pages.
 
-## Content above the paywall is always public
+## Content above the embed is always public
 
-Only the content placed after the embed snippet is hidden. Use this to show a teaser paragraph or preview image above the embed, so visitors understand what they are buying before they see the overlay.
+Only content placed after the embed snippet is hidden. Place a teaser paragraph or preview image above the embed so visitors understand what they are unlocking before they see the overlay.
+
+## Ghost button vs. PayGlue Paywall
+
+Ghost has its own built-in member paywall. You can use it if you are already on Stripe. PayGlue's Paywall works with any payment provider — Polar, PayPal, Lemon Squeezy, and more — and gives you full control over the overlay design and button destination.
