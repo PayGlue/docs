@@ -68,6 +68,12 @@
         ]
       },
       {
+        "group": "Buy Buttons",
+        "pages": [
+          "buy-button/overview"
+        ]
+      },
+      {
         "group": "Pricing table",
         "pages": [
           "pricing-table/overview"
@@ -104,6 +110,7 @@
       {
         "group": "JS Paywall",
         "pages": [
+          "paywall/overview",
           "paywall/overview.mdx"
         ]
       }
