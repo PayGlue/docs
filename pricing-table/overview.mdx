@@ -3,21 +3,72 @@ title: "Pricing table"
 description: "Embed a pricing table on your Ghost site without Stripe."
 ---
 
-<Warning>
-  This page is coming soon.
-</Warning>
+The PayGlue pricing table lets you mix free, one-time, and subscription tiers into a single table and embed it anywhere on your Ghost site with one script tag. No Stripe connection required.
 
-## What is the PayGlue pricing table?
+## Create a pricing table
 
-The PayGlue pricing table lets you display your payment provider's products directly on your Ghost site, with buy buttons that link to your provider's checkout. No Stripe required for the checkout flow.
+1. Open the **Pricing table** section in your PayGlue dashboard.
+2. Click **New table**.
+3. Give your table a name (internal only).
+4. Pick a **template**: Classic, Minimal, or Bold.
+5. Set an **accent color** for buttons, toggle, ribbon badge, and highlighted card.
+6. Add up to 5 tiers. Each tier has its own CTA type (see below).
+7. Click **Save**.
 
-## Features
+## CTA types
 
-- 1 to 5 pricing columns
-- Works with Polar and other supported providers
-- Embeddable via a simple code snippet in Ghost
-- Fully customizable labels, descriptions, and feature lists
+Each tier can have one of four call-to-action types:
 
-## Coming soon
+| Type | What happens on click |
+| --- | --- |
+| **Free sign-up** | Opens your Ghost free member signup portal. No payment required, no URL to enter. |
+| **One-time** | Links to a one-time payment checkout from your connected payment provider. |
+| **Subscription** | Links to a recurring subscription checkout from your connected payment provider. |
+| **Custom URL** | Links to any URL you enter. Works for Pay What You Want (PWYW) links or external checkouts. |
 
-Full setup instructions will be available when the pricing table feature launches.
+For **One-time** and **Subscription**, select a product from your Polar catalog — the checkout URL fills automatically.
+
+## Monthly / yearly toggle
+
+Enable **Show monthly / yearly toggle** to let visitors switch between billing periods. Set a separate price per tier for each period. If a tier has no yearly price, it shows the monthly price in both views.
+
+## Highlight and ribbon badge
+
+Toggle **Highlight this tier** on any tier to visually emphasize it. When highlight is on, a ribbon badge appears in the corner. The default text is **Popular** (max 10 characters). You can change it to anything that fits your copy.
+
+## Embed options
+
+Once your table is saved, two embed snippets appear.
+
+### Option A — Inline embed
+
+Paste this into a Ghost **HTML card**. The table renders inline in your post or page and automatically breaks out of Ghost's content column to full viewport width.
+
+```html
+<script src="https://api.payglue.io/pricing-table.js" data-table-id="YOUR_TABLE_ID" defer></script>
+```
+
+### Option B — Overlay button
+
+Paste this into any Ghost **HTML card or text block**. It renders a styled button. Clicking the button opens the full pricing table in a full-screen modal overlay, with no width constraints.
+
+```html
+<script src="https://api.payglue.io/pricing-table.js" data-table-id="YOUR_TABLE_ID" data-overlay-label="View plans" data-overlay-color="#4f46e5" data-overlay-radius="md" data-overlay-align="center" defer></script>
+```
+
+**Overlay button styling options** (set in the dashboard, reflected in the snippet automatically):
+
+| Option | Values | Default |
+| --- | --- | --- |
+| Button label | Any text | `View plans` |
+| Button color | Any hex color | `#4f46e5` |
+| Corners | `md` (rounded), `full` (pill), `none` (flat) | `md` |
+| Alignment | `left`, `center`, `right` | `center` |
+
+## Tips
+
+**Ghost clips content with overflow hidden.** The inline embed handles this automatically by removing `overflow: hidden` from ancestor elements on load. You do not need to edit your Ghost theme.
+
+**Toggle not changing prices?** Make sure you have entered a value in the **Yearly price** field for each subscription tier. If the field is empty, the monthly price is shown in both views.
+
+**Using the overlay button as an alternative to inline.** If your Ghost theme makes inline embeds look cramped, use the overlay button instead. The modal overlay has no theme constraints and always looks clean.
