@@ -30,18 +30,14 @@ The overlay appears as soon as the header script and embed are in place. Members
   <Step title="Install the header script in Ghost">
     In your PayGlue dashboard, go to **Installation** and copy the header script.
 
-    PLACEHOLDER IMAGE — PayGlue Installation page showing the header script code block with the Copy button highlighted
-
     Open Ghost Admin and go to **Settings → Code Injection → Site Header**. Paste the script and click **Save**.
-
-    PLACEHOLDER IMAGE — Ghost Admin Code Injection screen with the PayGlue script tag pasted in the Site Header field
 
     The script only needs to be installed once. It runs on every page of your Ghost site automatically.
   </Step>
   <Step title="Create a Paywall config">
     In your PayGlue dashboard, go to **Paywall** and click **New paywall**.
 
-    Fill in the fields:
+    Fill in the overlay fields:
 
     | Field | What it does |
     | --- | --- |
@@ -49,27 +45,34 @@ The overlay appears as soon as the header script and embed are in place. Members
     | Headline | Title shown on the overlay |
     | Body text | Short message below the headline |
     | Button label | Text on the call-to-action button |
-    | Button URL | Where the button sends visitors — use your payment provider checkout link |
+    | Button color | Background color of the button (hex) |
+    | Text color | Button text color (hex) |
+    | Button width | Auto (fits the label) or Full (stretches to container width) |
+    | Alignment | Left, center, or right alignment of the button within the overlay |
 
-    PLACEHOLDER IMAGE — Paywall config form in the PayGlue dashboard with the fields Name, Headline, Body text, Button label, Button color picker, and Button URL visible
+    **Setting the button link — two options:**
+
+    **Link a Polar product** (recommended) — select a product from your connected Polar catalog. The checkout URL fills in automatically. When a visitor clicks the button, they go directly to that product's checkout.
+
+    **Custom URL** — paste any URL manually. Use this for providers that don't yet support the product picker, for PWYW links, or for Ghost portal links.
+
+    <Note>
+      If you see **Sandbox mode — using test products**, your Polar token is set to the test environment. Sandbox purchases do not trigger production webhooks. Switch to a production token in **Connections → Polar** to go live.
+    </Note>
+
+    The live preview on the right updates as you type so you can see exactly how the overlay will look before saving.
 
     Click **Save**. The embed snippet appears below the form.
-
-    PLACEHOLDER IMAGE — Saved Paywall config showing the embed snippet below the form with a Copy button
   </Step>
   <Step title="Embed in your Ghost post">
     Open the Ghost post or page where you want to protect content.
 
     Add an **HTML card** at the exact point where the paywall should begin. Paste the embed snippet from Step 2 into the card.
 
-    PLACEHOLDER IMAGE — Ghost post editor with an HTML card inserted mid-article containing the PayGlue Paywall embed snippet
-
     Everything above the HTML card is visible to all visitors. Everything below is hidden behind the paywall overlay.
   </Step>
   <Step title="Test the paywall">
     Open the post in a private or incognito window. The paywall overlay should appear over the content below the embed.
-
-    PLACEHOLDER IMAGE — Live Ghost blog post in an incognito browser. The first paragraphs are visible, then a PayGlue overlay covers the rest with the configured headline, body text, and buy button.
 
     Log in with a Ghost member account that has active PayGlue access. The overlay should disappear and the full content should be visible.
   </Step>
