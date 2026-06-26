@@ -74,6 +74,12 @@
         ]
       },
       {
+        "group": "Paywall",
+        "pages": [
+          "paywall/overview"
+        ]
+      },
+      {
         "group": "Pricing table",
         "pages": [
           "pricing-table/overview"
@@ -105,13 +111,6 @@
         "group": "Webhooks",
         "pages": [
           "webhooks/event-log"
-        ]
-      },
-      {
-        "group": "JS Paywall",
-        "pages": [
-          "paywall/overview",
-          "paywall/overview.mdx"
         ]
       }
     ]
