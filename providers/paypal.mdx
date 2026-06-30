@@ -130,15 +130,13 @@ In the editor, select your PayPal plan from the product picker, then paste the c
 
 ---
 
-## Step 6: Create a product mapping
+## Step 6: Map plans to Ghost tiers
 
-Go to [Mappings](/mappings/create) and link each PayPal plan to a Ghost membership tier.
+Open the **Buy Button**, **Paywall**, or **Pricing Table** editor in your PayGlue dashboard and select your PayPal subscription plan from the product picker. Choose the Ghost newsletter (tier) the member should receive and the welcome email type, then save.
 
-- Select **PayPal** as the provider
-- Select the plan from the dropdown
-- Choose the Ghost tier to grant
+The mapping is created automatically. When a subscriber activates the plan, PayGlue grants the matching Ghost tier.
 
-When a subscriber activates a plan, PayGlue will automatically grant the matching tier.
+See also: [Buy Button](/buy-button/overview) · [Paywall](/paywall/overview) · [Pricing Table](/pricing-table/overview)
 
 ---
 
@@ -160,3 +158,4 @@ When a subscriber activates a plan, PayGlue will automatically grant the matchin
 When a buyer clicks a PayPal subscription checkout link, they see a **PayPal login page**. This is by design — PayPal requires buyers to have a PayPal account to manage a subscription. After logging in, they confirm the plan and are charged automatically on the billing cycle.
 
 PayGlue receives the confirmation webhook and creates or updates the Ghost member automatically.
+
