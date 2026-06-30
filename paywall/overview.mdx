@@ -70,6 +70,10 @@ The overlay appears as soon as the header script and embed are in place. Members
     Add an **HTML card** at the exact point where the paywall should begin. Paste the embed snippet from Step 2 into the card.
 
     Everything above the HTML card is visible to all visitors. Everything below is hidden behind the paywall overlay.
+
+    <Warning>
+      **Set the Ghost article visibility to Public.** Do not use Ghost's built-in "Members only", "Paid members only", or "Specific tiers" visibility settings on articles that use a PayGlue Paywall. If Ghost restricts the article itself, it blocks access before the PayGlue script can run — the paywall overlay never appears and visitors see a Ghost login wall instead. PayGlue handles access control; Ghost must not restrict visibility on its own.
+    </Warning>
   </Step>
   <Step title="Test the paywall">
     Open the post in a private or incognito window. The paywall overlay should appear over the content below the embed.
