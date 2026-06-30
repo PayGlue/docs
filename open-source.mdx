@@ -1,0 +1,35 @@
+---
+title: "Open Source"
+description: "PayGlue is open source under the Business Source License 1.1."
+---
+
+PayGlue is developed in the open. The source code is available on GitHub so you can read how it works, self-host it, or contribute.
+
+<Card title="PayGlue on GitHub" icon="github" href="https://github.com/PayGlue/PayGlue-OS">
+  github.com/PayGlue/PayGlue-OS
+</Card>
+
+## What is included
+
+The public repository contains the parts of PayGlue that handle the core integration work:
+
+- **Backend** — the Django API that receives webhooks from payment providers, looks up Ghost members, and grants or revokes access
+- **Dashboard frontend** — the Vue 3 app you use to connect Ghost, configure mappings, and monitor events
+
+## What is not included
+
+The public repository does not include the marketing website (payglue.io) or any internal tooling. The dashboard you see at [app.payglue.io](https://app.payglue.io) is built directly from the open-source code.
+
+## License
+
+PayGlue uses the [Business Source License 1.1](https://github.com/PayGlue/PayGlue-OS/blob/main/LICENSE.md) (BUSL 1.1).
+
+In short: the source code is readable and self-hostable for non-production use. Production use requires a PayGlue subscription. After four years the code converts to the Apache 2.0 license automatically.
+
+## Contributing
+
+Bug reports and pull requests are welcome. Open an issue on GitHub to discuss a change before submitting a pull request for anything larger than a typo fix.
+
+## Security disclosures
+
+If you find a security vulnerability, please do not open a public issue. See the [Security overview](/security/overview) page for responsible disclosure options.

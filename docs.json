@@ -113,6 +113,13 @@
         "pages": [
           "webhooks/event-log"
         ]
+      },
+      {
+        "group": "Open Source",
+        "icon": "github",
+        "pages": [
+          "open-source.mdx"
+        ]
       }
     ]
   },
