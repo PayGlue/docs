@@ -5,6 +5,8 @@ description: "Hide Ghost content behind a payment wall without Stripe using PayG
 
 The PayGlue Paywall hides content on any Ghost post or page so that only members who have purchased access can read it. It works without Stripe — your payment provider handles the purchase, and PayGlue grants Ghost membership automatically after the transaction.
 
+<Note>Placeholder: Paywall overlay as it appears on a Ghost post (button, headline, body text visible)</Note>
+
 ## How it works
 
 A small script in your Ghost site header checks whether the logged-in member has active access. If not, a paywall overlay appears over the locked content below the embed point. The overlay disappears automatically as soon as the member logs in with an account that PayGlue has already granted access to after a completed purchase.
@@ -28,14 +30,14 @@ The overlay appears as soon as the header script and embed are in place. Members
 
 <Steps>
   <Step title="Install the header script in Ghost">
-    In your PayGlue dashboard, go to **Installation** and copy the header script.
+    In your PayGlue dashboard, go to **Installation > Header script** and copy the header script.
 
-    Open Ghost Admin and go to **Settings → Code Injection → Site Header**. Paste the script and click **Save**.
+    Open Ghost Admin and go to **Settings > Code Injection > Site Header**. Paste the script and click **Save**.
 
     The script only needs to be installed once. It runs on every page of your Ghost site automatically.
   </Step>
   <Step title="Create a Paywall config">
-    In your PayGlue dashboard, go to **Paywall** and click **New paywall**.
+    In your PayGlue dashboard, go to **Installation > Paywall** and click **New paywall**.
 
     Fill in the overlay fields:
 
@@ -52,13 +54,15 @@ The overlay appears as soon as the header script and embed are in place. Members
 
     **Setting the button link — two options:**
 
-    **Link a Polar product** (recommended) — select a product from your connected Polar catalog. The checkout URL fills in automatically. When a visitor clicks the button, they go directly to that product's checkout.
+    **Link a product** (recommended) — select a product from your connected provider catalog. The checkout URL fills in automatically.
 
     **Custom URL** — paste any URL manually. Use this for providers that don't yet support the product picker, for PWYW links, or for Ghost portal links.
 
     <Note>
-      If you see **Sandbox mode — using test products**, your Polar token is set to the test environment. Sandbox purchases do not trigger production webhooks. Switch to a production token in **Connections → Polar** to go live.
+      If you see **Sandbox mode — using test products**, your Polar token is set to the test environment. Sandbox purchases do not trigger production webhooks. Switch to a production token in **Connection > Polar** to go live.
     </Note>
+
+    <Note>Placeholder: PayGlue Dashboard — Paywall editor with live preview on the right</Note>
 
     The live preview on the right updates as you type so you can see exactly how the overlay will look before saving.
 
