@@ -16,7 +16,7 @@ Ghost has a built-in button block — a PayGlue Buy Button gives you more stylin
 
 <Steps>
   <Step title="Open Buy Buttons">
-    In your PayGlue dashboard, go to **Buy Buttons** and click **New button**.
+    In your PayGlue dashboard, go to **Installation > Buttons** and click **New button**.
   </Step>
   <Step title="Name your button">
     Enter an internal name. This is only visible to you in the dashboard and helps you identify the button later.
@@ -31,13 +31,15 @@ Ghost has a built-in button block — a PayGlue Buy Button gives you more stylin
     **Link a product** — select a product from your connected payment provider. The checkout URL is filled in automatically. Your payment provider must be fully connected and a product mapping must exist before using this option. Without a mapping, a purchase goes through but PayGlue cannot grant Ghost access to the member automatically.
 
     <Note>
-      If you see **Sandbox mode — using test products**, your Polar token is set to the test environment. Purchases made via sandbox buttons do not result in real charges and will not trigger webhooks in production. Switch to a production token in **Connections → Polar** to go live.
+      If you see **Sandbox mode — using test products**, your Polar token is set to the test environment. Purchases made via sandbox buttons do not result in real charges and will not trigger webhooks in production. Switch to a production token in **Connection > Polar** to go live.
     </Note>
   </Step>
   <Step title="Customize appearance">
     Set the button label, background color, text color, border radius, and width. Use the alignment options to position the button within the Ghost editor column.
 
     Under **Open link in**, choose **New tab** (recommended for external checkout pages) or **Same tab**.
+
+    <Note>Placeholder: PayGlue Dashboard — Buy Button editor with styling options and live preview</Note>
   </Step>
   <Step title="Save and copy the embed code">
     Click **Save**. The embed code appears directly below the form.
@@ -46,12 +48,14 @@ Ghost has a built-in button block — a PayGlue Buy Button gives you more stylin
   </Step>
   <Step title="Paste into Ghost">
     In your Ghost post or page editor, add an **HTML card** where you want the button to appear, then paste the embed code.
+
+    <Note>Placeholder: Buy Button embedded in a Ghost post (example result)</Note>
   </Step>
 </Steps>
 
 ## Editing a button
 
-Open **Buy Buttons** in the dashboard and click the edit icon next to any button. Changes apply to all posts that use that button's embed code — you do not need to update the embed in Ghost.
+Open **Installation > Buttons** in the dashboard and click the edit icon next to any button. Changes apply to all posts that use that button's embed code — you do not need to update the embed in Ghost.
 
 ## New tab vs. same tab
 
