@@ -3,25 +3,21 @@ title: "Common errors"
 description: "A reference of common PayGlue errors and how to resolve them."
 ---
 
-<Warning>
-  This page is coming soon.
-</Warning>
-
 ## Ghost API errors
 
 | Error | Cause | Fix |
 | --- | --- | --- |
-| `401 Unauthorized` | Invalid or expired Admin API key | Regenerate and update your Ghost credentials |
+| `401 Unauthorized` | Invalid or expired Admin API key | Regenerate and update your Ghost credentials under **Connection > Ghost CMS** |
 | `422 Unprocessable Entity` | Invalid member data | Check the email format in the event log |
-| `404 Not Found` | Wrong Ghost Admin URL | Verify the URL in your credentials settings |
+| `404 Not Found` | Wrong Ghost Admin URL | Verify the URL under **Connection > Ghost CMS** |
 
 ## Webhook errors
 
 | Error | Cause | Fix |
 | --- | --- | --- |
-| Webhook not received | Wrong URL in provider | Copy the correct URL from your mapping |
-| Signature mismatch | Wrong webhook secret | Re-copy the webhook secret from PayGlue |
+| Webhook not received | Wrong URL in provider | Copy the correct URL from your provider's connection page under **Connection** |
+| Signature mismatch | Wrong webhook secret | Re-copy the webhook secret from your provider's connection page |
 
 ## Still stuck?
 
-Contact [team@payglue.io](mailto:team@payglue.io) and include the event ID from your webhook event log.
+Contact [team@payglue.io](mailto:team@payglue.io) and include the event ID from **Analytics > Webhook Events**.
