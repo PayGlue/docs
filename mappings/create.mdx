@@ -1,32 +1,31 @@
 ---
-title: "Create a mapping"
+title: "Product Mapping"
 description: "Connect a payment provider product to a Ghost membership tier."
 ---
 
-<Warning>
-  This page is coming soon.
-</Warning>
+A **product mapping** tells PayGlue: when a customer buys product X from provider Y, give them Ghost membership tier Z and send welcome email type W.
 
-## What is a mapping?
+## Where mappings are created
 
-A mapping tells PayGlue: when a customer buys product X from provider Y, give them Ghost membership tier Z.
-
-## Steps
+Mappings are configured inline when you set up a **Buy Button**, **Paywall**, or **Pricing Table**. When you select a product and a Ghost tier in one of those editors and click **Save**, the mapping is recorded automatically. There is no separate "create mapping" flow.
 
 <Steps>
-  <Step title="Open Mappings">
-    In your PayGlue dashboard, go to **Mappings** and click **New mapping**.
+  <Step title="Open an editor">
+    Go to **Installation > Buttons**, **Paywall**, or **Pricing Table** in your PayGlue dashboard and open or create an item.
   </Step>
-  <Step title="Select a provider and product">
-    Choose your payment provider and select the product or price you want to map.
+  <Step title="Link a product">
+    Choose **Link a product** as the link type. Select your payment provider and the product you want to map.
   </Step>
-  <Step title="Select a Ghost tier">
-    Choose which Ghost membership tier the customer should receive.
+  <Step title="Configure Ghost settings">
+    Select the Ghost newsletter (tier) the member should receive and the welcome email type.
   </Step>
-  <Step title="Configure email">
-    Select which welcome email Ghost should send. Magic link is recommended.
-  </Step>
-  <Step title="Save and copy the webhook URL">
-    Save the mapping. Copy the webhook URL and add it to your provider's webhook settings.
+  <Step title="Save">
+    Click **Save**. The mapping is created automatically and appears in **Analytics > Product Mapping**.
   </Step>
 </Steps>
+
+## Viewing all mappings
+
+Go to **Analytics > Product Mapping** in your dashboard to see all configured mappings — which product maps to which Ghost tier, the trigger event type, and where each mapping was created (button, paywall, or pricing table).
+
+You cannot edit or delete mappings directly from this view. To change a mapping, open the Buy Button, Paywall, or Pricing Table item it belongs to and update the settings there.
