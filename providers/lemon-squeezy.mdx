@@ -20,6 +20,8 @@ Lemon Squeezy is a fully supported payment provider in PayGlue. A purchase trigg
   <Step title="Select your store in PayGlue">
     In your PayGlue dashboard, go to **Connection > Lemon Squeezy** and paste your API key. After saving, a **Store** dropdown appears. Select the store that contains the products you want to use.
 
+    <Note>Placeholder: PayGlue Dashboard — Connection > Lemon Squeezy, API key and store selector</Note>
+
     <Warning>
       You must select a store before products will appear in the Buy Button, Paywall, and Pricing Table editors. If no products show up, check that a store is selected.
     </Warning>
@@ -43,6 +45,8 @@ Lemon Squeezy is a fully supported payment provider in PayGlue. A purchase trigg
       - `subscription_expired`
 
     Save the webhook.
+
+    <Note>Placeholder: Lemon Squeezy — Settings > Webhooks, webhook creation form with URL and events</Note>
   </Step>
   <Step title="Add the signing secret to PayGlue">
     Back in **PayGlue > Connection > Lemon Squeezy**, paste the same signing secret into the **Webhook Secret** field and save.
@@ -98,3 +102,4 @@ Open the event in **Analytics > Webhook Events** and check the error message. Co
 **Ghost member is not created**
 
 Confirm there is an active mapping for the purchased product in the Buy Button, Paywall, or Pricing Table editor. Without a mapping, PayGlue receives the event but takes no action.
+
