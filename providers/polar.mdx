@@ -14,16 +14,16 @@ Polar is the first fully supported payment provider in PayGlue.
 
 <Steps>
   <Step title="Create an API token">
-    In Polar, go to **Settings \> Preferences \> Developers** and create a new API token. Set expiration to **Never** and enable the required scopes.
+    In Polar, go to **Settings > Preferences > Developers** and create a new API token. Set expiration to **Never** and enable the required scopes.
   </Step>
   <Step title="Add to PayGlue">
-    In your PayGlue dashboard, go to **Providers** and click **Connect Polar**. Paste your API token.
+    In your PayGlue dashboard, go to **Connection > Polar** and paste your API token.
+  </Step>
+  <Step title="Copy the webhook URL">
+    On the same connection page, copy the **Webhook URL** and add it in **Polar > Settings > Webhooks**.
   </Step>
   <Step title="Create a mapping">
-    Go to **Mappings**, create a new mapping, and select your Polar product.
-  </Step>
-  <Step title="Add the webhook URL">
-    Copy the webhook URL from your mapping and add it in **Polar \> Settings \> Webhooks**.
+    Open the **Buy Button**, **Paywall**, or **Pricing Table** editor and select your Polar product. The mapping is created automatically when you save.
   </Step>
 </Steps>
 
