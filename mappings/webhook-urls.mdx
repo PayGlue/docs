@@ -3,18 +3,20 @@ title: "Webhook URLs"
 description: "Where to find and how to use your PayGlue webhook URL."
 ---
 
-<Warning>
-  This page is coming soon.
-</Warning>
-
 ## Where to find your webhook URL
 
-Each mapping has its own webhook URL. You can find it in your PayGlue dashboard under **Mappings** after saving a mapping.
+Your webhook URL is shown on each provider's connection page. Go to **Connection** in your PayGlue dashboard, open the provider you want to configure, and copy the webhook URL from there.
 
 The format is:
 
 ```text
-https://api.payglue.io/webhooks/{provider}?tenant={your-slug}
+https://api.payglue.io/webhooks/{provider}?tenant=your-org-slug
+```
+
+For example, for Polar:
+
+```text
+https://api.payglue.io/webhooks/polar?tenant=your-org-slug
 ```
 
 ## Adding the URL to your provider
@@ -24,6 +26,7 @@ Paste this URL into your payment provider's webhook settings. See the provider-s
 - [Polar](/providers/polar)
 - [Lemon Squeezy](/providers/lemon-squeezy)
 - [Stripe](/providers/stripe)
+- [PayPal](/providers/paypal)
 
 <Warning>
   If you rename your organization slug, your webhook URLs change. Update them in every provider's dashboard immediately.
