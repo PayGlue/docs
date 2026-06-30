@@ -118,7 +118,7 @@
         "group": "Open Source",
         "icon": "github",
         "pages": [
-          "open-source.mdx"
+          "open-source"
         ]
       }
     ]
@@ -160,3 +160,4 @@
   },
   "description": "Connect Ghost memberships to any payment provider. Step-by-step guides, setup, and troubleshooting."
 }
+
