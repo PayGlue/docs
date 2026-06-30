@@ -36,12 +36,12 @@ Subscription plans are managed in your PayPal Business dashboard — not in the 
 4. Open the **Abonnementpläne** (Subscription Plans) tab
 5. Click **+ Plan erstellen** (Create plan)
 
-> **Note:** [Screenshot — PayPal Business Dashboard: Zahlen & Zahlungen empfangen > Abonnements > Abonnementpläne (empty state with Plan erstellen button)]
+<Note>Placeholder: PayPal Business Dashboard — Zahlen & Zahlungen empfangen > Abonnements > Abonnementpläne (empty state, Plan erstellen button)</Note>
 
 6. Fill in the plan details: name, billing cycle (monthly or yearly), and price
 7. Activate the plan — it must have status **AKTIVIERT** to appear in PayGlue
 
-> **Note:** [Screenshot — Abonnements verwalten: product page showing Inner Circle Jährlich and Inner Circle Monatlich plans with AKTIVIERT status and their Plan IDs]
+<Note>Placeholder: PayPal — Abonnements verwalten, two active plans with AKTIVIERT status and Plan IDs visible</Note>
 
 After saving, each plan gets a **Plan ID** starting with `P-`. You will need this to build the checkout link (see Step 5).
 
@@ -53,13 +53,13 @@ After saving, each plan gets a **Plan ID** starting with `P-`. You will need thi
 2. Click **Apps & Credentials** in the left sidebar
 3. Make sure you are in **Live** mode — click the toggle at the top left to switch from Sandbox to Live
 
-> **Note:** [Screenshot — developer.paypal.com Apps & Credentials list showing Default Application and PayGLue app, with the Sandbox/Live toggle visible]
+<Note>Placeholder: developer.paypal.com — Apps & Credentials list with Sandbox/Live toggle</Note>
 
 <Warning>
 If you see a banner saying "Viewing sandbox API credentials. Upgrade your account to PayPal for Business to view live credentials" — your account is not yet a Business account or you are in Sandbox mode. Switch to Live at the top of the page.
 </Warning>
 
-> **Note:** [Screenshot — developer.paypal.com popup: "Want to see live data and credentials? Upgrade your account to PayPal for Business to switch to live mode."]
+<Note>Placeholder: developer.paypal.com — popup "Upgrade to PayPal for Business to switch to live mode"</Note>
 
 4. Click **Create App**
 5. Give it a name (e.g. `PayGlue`) and select **Merchant** as the app type
@@ -158,4 +158,5 @@ See also: [Buy Button](/buy-button/overview) · [Paywall](/paywall/overview) · 
 When a buyer clicks a PayPal subscription checkout link, they see a **PayPal login page**. This is by design — PayPal requires buyers to have a PayPal account to manage a subscription. After logging in, they confirm the plan and are charged automatically on the billing cycle.
 
 PayGlue receives the confirmation webhook and creates or updates the Ghost member automatically.
+
 
