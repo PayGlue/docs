@@ -52,7 +52,7 @@
         ]
       },
       {
-        "group": "Mappings",
+        "group": "Product Mapping",
         "pages": [
           "mappings/create",
           "mappings/email-types",
@@ -160,4 +160,3 @@
   },
   "description": "Connect Ghost memberships to any payment provider. Step-by-step guides, setup, and troubleshooting."
 }
-
