@@ -3,16 +3,98 @@ title: "Lemon Squeezy"
 description: "Connect Lemon Squeezy as a payment provider in PayGlue."
 ---
 
-<Warning>
-  Lemon Squeezy support is coming soon. This page will be updated when it launches.
-</Warning>
+Lemon Squeezy is a fully supported payment provider in PayGlue. A purchase triggers automatic Ghost membership creation with labels and a welcome email.
 
-## What to expect
+## Prerequisites
 
-Lemon Squeezy integration will work similarly to Polar:
+- A Lemon Squeezy account at [lemonsqueezy.com](https://www.lemonsqueezy.com)
+- At least one product or variant created in your Lemon Squeezy store
+- A Ghost blog connected in PayGlue ([Connect Ghost](/ghost/connect))
 
-1. Connect your Lemon Squeezy API key in PayGlue
-2. Create a mapping from a Lemon Squeezy product to a Ghost tier
-3. Add the PayGlue webhook URL to Lemon Squeezy
+## Steps
 
-Want to be notified when this launches? [Contact us](mailto:team@payglue.io).
+<Steps>
+  <Step title="Create an API key">
+    In Lemon Squeezy, go to **Settings > API** and create a new API key. Copy it.
+  </Step>
+  <Step title="Select your store in PayGlue">
+    In your PayGlue dashboard, go to **Connection > Lemon Squeezy** and paste your API key. After saving, a **Store** dropdown appears. Select the store that contains the products you want to use.
+
+    <Warning>
+      You must select a store before products will appear in the Buy Button, Paywall, and Pricing Table editors. If no products show up, check that a store is selected.
+    </Warning>
+  </Step>
+  <Step title="Copy your webhook URL">
+    On the same Lemon Squeezy connection page, copy the **Webhook URL**. It looks like this:
+
+    ```
+    https://api.payglue.io/webhooks/lemonsqueezy?tenant=your-org-slug
+    ```
+  </Step>
+  <Step title="Create a webhook in Lemon Squeezy">
+    In Lemon Squeezy, go to **Settings > Webhooks** and click **Add webhook**.
+
+    - **URL:** paste the webhook URL from the previous step
+    - **Secret:** create a random string (e.g. 32 random characters) to use as your signing secret
+    - **Events:** enable at minimum `order_created`. For subscriptions also enable:
+      - `subscription_created`
+      - `subscription_updated`
+      - `subscription_cancelled`
+      - `subscription_expired`
+
+    Save the webhook.
+  </Step>
+  <Step title="Add the signing secret to PayGlue">
+    Back in **PayGlue > Connection > Lemon Squeezy**, paste the same signing secret into the **Webhook Secret** field and save.
+
+    <Note>
+      PayGlue uses this secret to verify the `X-Signature` header on every incoming webhook. Both sides must have the exact same value.
+    </Note>
+  </Step>
+  <Step title="Create a mapping">
+    Go to **Buy Button**, **Paywall**, or **Pricing Table** in your PayGlue dashboard and select your Lemon Squeezy product from the dropdown. Configure which Ghost newsletter to subscribe to and which welcome email to send, then save.
+  </Step>
+  <Step title="Test your setup">
+    Make a test purchase using a Lemon Squeezy test mode product. Check **Analytics > Webhook Events** in your PayGlue dashboard. The event should appear with status **Processed** and the buyer's email should appear as a new member in Ghost Admin.
+  </Step>
+</Steps>
+
+## Test mode vs. live mode
+
+Lemon Squeezy does not have a separate sandbox environment. Test mode is toggled per API key:
+
+- API keys created in the **Test** section of Lemon Squeezy settings only see test store products
+- The webhook URL is the same for test and live
+- Test purchases trigger real Ghost member creation
+
+Remove test members from Ghost Admin before going live.
+
+## Supported events
+
+| Lemon Squeezy event | PayGlue action |
+|---|---|
+| `order_created` | Create Ghost member (one-time purchase) |
+| `subscription_created` | Create Ghost member (subscription) |
+| `subscription_updated` | Update Ghost member |
+| `subscription_resumed` | Restore Ghost member access |
+| `subscription_payment_success` | Confirm active Ghost member |
+| `subscription_cancelled` | Revoke Ghost member access |
+| `subscription_paused` | Revoke Ghost member access |
+| `subscription_expired` | Revoke Ghost member access |
+
+## Troubleshooting
+
+**Products do not appear in the dropdown**
+
+Make sure you have selected a store in **Connection > Lemon Squeezy**. Without a store selected, PayGlue cannot filter which products belong to your account.
+
+**Webhook shows as Failed in Analytics**
+
+Open the event in **Analytics > Webhook Events** and check the error message. Common causes:
+
+- Signature mismatch: the signing secret in PayGlue does not match the one in Lemon Squeezy
+- Wrong webhook URL: the URL must end in `?tenant=your-org-slug` with the correct slug for your organization
+
+**Ghost member is not created**
+
+Confirm there is an active mapping for the purchased product in the Buy Button, Paywall, or Pricing Table editor. Without a mapping, PayGlue receives the event but takes no action.
