@@ -31,6 +31,45 @@ Polar is the first fully supported payment provider in PayGlue.
       ![Polar Webhook](/images/polar-webhook.png)
     </Frame>
   </Step>
+  <Step title="Create a Webhook Endpoint in Polar">
+    In Polar, go to **Settings \> Webhooks \> Add Endpoint** and create a new Webhook. Set expiration to **Never** and enable the required scopes.
+
+    <Frame>
+      ![Polar Webhook](/images/polar-webhook.png)
+    </Frame>
+  </Step>
+  <Step title="Copy your Webhook Secret">
+    After saving the endpoint, you get a webhook secret from polar. We need this secret to communicate safely with Polar to add new member to your ghost blog.
+
+    <Frame>
+      ![Polar Webhook Secret](/images/polar-webhook-secret.png)
+    </Frame>
+  </Step>
+  <Step title="Optional: Create an API Token in Polar">
+    In Polar, go to **Settings \> Preferences \> Developers** and create a new API token. Set expiration to **Never** and enable the required scopes.
+
+    <Frame>
+      ![Polar Developer Api](/images/polar-developer-api-2.png)
+    </Frame>
+
+    <Tip>
+      This step is optional, but it grants some nice features. Our product auto-fetch. If you decide to add a developer key from Polar to PayGlue, we can automatically fetch all products; no manual copy and paste with product\_IDs is needed anymore.
+    </Tip>
+  </Step>
+  <Step title="Create a Webhook Endpoint in Polar">
+    In Polar, go to **Settings \> Webhooks \> Add Endpoint** and create a new Webhook. Set expiration to **Never** and enable the required scopes.
+
+    <Frame>
+      ![Polar Webhook](/images/polar-webhook.png)
+    </Frame>
+  </Step>
+  <Step title="Add your webhook secret & (optional) API Token">
+    In your PayGlue dashboard, go to **Connection \> Polar** and paste your secret & token.
+
+    <Frame>
+      ![Payglue Polar Connected](/images/payglue-polar-connected.png)
+    </Frame>
+  </Step>
   <Step title="Copy your Webhook Secret">
     After saving the endpoint, you get a webhook secret from polar. We need this secret to communicate safely with Polar to add new member to your ghost blog.
 
@@ -56,8 +95,18 @@ Polar is the first fully supported payment provider in PayGlue.
       ![Payglue Polar Connected](/images/payglue-polar-connected.png)
     </Frame>
   </Step>
+  <Step title="Add your webhook secret & (optional) API Token">
+    In your PayGlue dashboard, go to **Connection \> Polar** and paste your secret & token.
+
+    <Frame>
+      ![Payglue Polar Connected](/images/payglue-polar-connected.png)
+    </Frame>
+  </Step>
   <Step title="Run a health check">
     When everything works as expected, you get a green status indicator for Connection Established. 
+  </Step>
+  <Step title="Run a health check">
+    When everything works as expected, you get a green status indicator for Connection Established.
   </Step>
   <Step title="Create a test and see if auto-fetch works">
     In your PayGlue dashboard, go to **Installation \> Button**. Choose Polar and link to a product to auto-fetch your products.
