@@ -1,25 +1,29 @@
 ---
-title: "Why Ghost requires Stripe"
+title: "Ghost native payment requires Stripe"
 description: "Ghost requires Stripe to be connected even when you use a different payment provider."
 ---
-
-<Warning>
-  This page is coming soon.
-</Warning>
 
 ## The short answer
 
 Ghost's built-in membership system is tightly coupled to Stripe. Even if your customers pay through Polar or another provider, Ghost itself needs a Stripe account connected to unlock its membership features.
 
+<Frame>
+  ![Ghost Why Stripe](/images/ghost-why-stripe.png)
+</Frame>
+
 ## What PayGlue does
 
-PayGlue bypasses Ghost's native payment flow entirely. When a customer pays through your chosen provider, PayGlue creates or updates their Ghost membership directly via the Ghost Admin API — no Stripe charge involved.
+PayGlue bypasses Ghost's native payment flow entirely. When a customer pays through your chosen provider, PayGlue creates or updates their Ghost membership directly via the Ghost Admin API no Stripe charge involved.
 
-## What you need to do
+## Want to keep stripe alongside PayGlue for more flexibility?
 
 1. Connect any Stripe account to Ghost (it does not need to process real payments)
 2. Connect your actual payment provider to PayGlue
 3. PayGlue handles the rest
+
+<Check>
+  With this setup, you can keep your existing sripe subscriptions and add, for example, one-time payments, pay-what-you-want, etc., with other providers beyond stripe.
+</Check>
 
 <Note>
   See also: [Ghost shows a Stripe cancellation notice](/troubleshooting/ghost-stripe-notice)

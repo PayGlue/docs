@@ -11,27 +11,47 @@ Mappings are not created on a dedicated page. Instead, you configure them inline
 
 <Steps>
   <Step title="Open an editor">
-    Go to **Installation > Buttons**, **Paywall**, or **Pricing Table** in your PayGlue dashboard and open or create an item.
+    Go to **Installation \> Buttons**, **Paywall**, or **Pricing Table** in your PayGlue dashboard and open or create an item.
   </Step>
-  <Step title="Link a product">
-    Choose **Link a product** as the link type. Select your payment provider and the product you want to map.
+  <Step title="Select a provider and product">
+    Choose your payment provider and select the product. Choose **Link a product** as the link type. Select your payment provider and the product you want to map.
 
-    <Note>Placeholder: Buy Button / Paywall editor — product picker with provider and product selection</Note>
+    <Frame>
+      ![Payglue Product Mapping](/images/payglue-product-mapping.png)
+    </Frame>
   </Step>
   <Step title="Configure Ghost settings">
-    Select the Ghost newsletter (tier) the member should receive and the welcome email type.
+    Choose what happens after the customer buys a product
 
-    <Note>Placeholder: Buy Button / Paywall editor — Ghost tier and welcome email dropdowns</Note>
+    <Frame>
+      ![Payglue Ghost Cms Mapping](/images/payglue-ghost-cms-mapping.png)
+    </Frame>
+
+    1. One-Time or Subscription
+    2. Subscribe to the newsletter. (_Defaul: Yes_)
+    3. Welcome email for new member (_Magic link is recommended.)_
+  </Step>
+  <Step title="Configure email">
+    Select which welcome email Ghost should send. Magic link is recommended.
+
+    <Frame>
+      ![Payglue Welcome Email Actions](/images/payglue-welcome-email-actions.png)
+    </Frame>
+  </Step>
+  <Step title="Save and copy the webhook URL">
+    Save the mapping. Copy the webhook URL and add it to your provider's webhook settings.
   </Step>
   <Step title="Save">
-    Click **Save**. The mapping is created automatically and appears in **Analytics > Product Mapping**.
+    Click **Save**. The mapping is created automatically and appears in **Analytics \> Product Mapping**.
   </Step>
 </Steps>
 
 ## Viewing all mappings
 
-Go to **Analytics > Product Mapping** in your dashboard to see all configured mappings — which product maps to which Ghost tier, the trigger event type, and where each mapping was created (button, paywall, or pricing table).
+Go to **Analytics \> Product Mapping** in your dashboard to see all configured mappings — which product maps to which Ghost tier, the trigger event type, and where each mapping was created (button, paywall, or pricing table).
 
-<Note>Placeholder: PayGlue Dashboard — Analytics > Product Mapping overview table</Note>
+<Frame>
+  ![Payglue Analytics](/images/payglue-analytics.png)
+</Frame>
 
 You cannot edit or delete mappings directly from this view. To change a mapping, open the Buy Button, Paywall, or Pricing Table item it belongs to and update the settings there.

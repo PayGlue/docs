@@ -52,14 +52,6 @@
         ]
       },
       {
-        "group": "Product Mapping",
-        "pages": [
-          "mappings/create",
-          "mappings/email-types",
-          "mappings/webhook-urls"
-        ]
-      },
-      {
         "group": "Providers",
         "pages": [
           "providers/polar",
@@ -84,6 +76,13 @@
         "group": "Pricing table",
         "pages": [
           "pricing-table/overview"
+        ]
+      },
+      {
+        "group": "Analytics",
+        "pages": [
+          "mappings/create",
+          "mappings/webhook-urls"
         ]
       },
       {

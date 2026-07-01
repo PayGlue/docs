@@ -12,16 +12,37 @@ description: "Add your Ghost Admin API key to PayGlue."
 
 <Steps>
   <Step title="Open Ghost Admin">
-    Go to your Ghost dashboard and navigate to **Settings > Integrations**.
+    Go to your Ghost dashboard and navigate to **Settings \> Integrations**.
   </Step>
   <Step title="Create a custom integration">
     Click **Add custom integration**, give it a name (e.g. PayGlue), and copy the **Admin API key**.
 
-    <Note>Placeholder: Ghost Admin — Settings > Integrations, custom integration with API key visible</Note>
+    <Frame>
+      ![Ghost Custom Integrations](/images/-Ghost-custom-integrations.png)
+    </Frame>
+
+    <Frame>
+      ![Ghsot Cms Api Keys](/images/ghsot-cms-api-keys.png)
+    </Frame>
   </Step>
   <Step title="Add to PayGlue">
-    In your PayGlue dashboard, go to **Connection > Ghost CMS** and paste the Admin URL and API key.
+    In your PayGlue dashboard, go to **Connection \> Ghost CMS** and paste the Admin URL and API key.
 
-    <Note>Placeholder: PayGlue Dashboard — Connection > Ghost CMS form</Note>
+    <Frame>
+      ![Payglue Ghost Cms Connection](/images/payglue-ghost-cms-connection.png)
+    </Frame>
+  </Step>
+  <Step title="Run a health Check">
+    When everything works as expected, you get a green status indicator for Connection Established. If not, look into the Admin API Key and the Content API Key to add them again.
+  </Step>
+  <Step title="Stripe Indicator">
+    Stripe isn't needed to run with PayGlue. If you already have a stripe account connected, we just show a status indicator; no extra work for you.
+
+    <Frame>
+      ![Payglue Stripe Indicator](/images/payglue-stripe-indicator.png)
+    </Frame>
+  </Step>
+  <Step title="Ghost setup completed">
+    Your ghost publication is connected. Now have a look; which payment / MoR provider suits you best?
   </Step>
 </Steps>
